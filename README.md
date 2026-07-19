@@ -10,7 +10,7 @@ Population-scale disease screening needs to balance discriminative accuracy agai
 
 - number of individuals classified as high risk,
 - number of true CVD events captured in the high-risk group,
-- number of CVD events plausibly prevented (assuming a fixed treatment efficacy),
+- number of CVD events plausibly prevented (assuming a fixed treatment efficacy 20%),
 - number needed to screen (NNS) and number needed to treat (NNT) to prevent one event.
 
 It also implements and evaluates a **two-step "target screening"** strategy, in which a low-cost model (the "No Needle Model") is used as first-line triage, and only individuals it flags as medium risk are re-evaluated with a second, more complex model — analogous to a remote pre-check stratification step ahead of an in-person assessment.
@@ -35,14 +35,6 @@ This analysis draws on and combines ideas from two published studies:
 5. **Matched high-risk-count sensitivity comparison** — as a fairness check (following Ritchie et al.), compares the two-step target-screening scenario against simply selecting the same number of highest-risk individuals ranked by the No Needle Model alone.
 6. **Combined visualisation** — merges the single-step "Threshold" scenario and the "NoNeedle_target" (matched-count) scenario into one figure per metric, with QRISK as the fixed baseline.
 
-## Repository structure
-
-```
-CoxPH_screening/
-└── Reproduce_ESC_journal_all_models.ipynb   # main analysis notebook (data loading → stratification → benchmarking → target screening)
-```
-
-> This is currently the primary file in the repository. If additional scripts (e.g. upstream Cox-PH model training, data preprocessing) are added, list and describe them here.
 
 ## Data
 
@@ -94,24 +86,18 @@ The notebook produces two sets of five-panel figures (one panel per metric: `N_h
 
 ## Citation
 
-If you use or reference this analysis, please cite the two source studies this work builds on:
-
 > Oexner RR, Schmitt R, Kals M, et al. Multi-disease risk prediction models for population-scale personalised screening. *medRxiv* 2026.02.02.26345271. https://doi.org/10.64898/2026.02.02.26345271
 
 > Ritchie SC, Jiang X, Pennells L, et al. Combined clinical, metabolomic, and polygenic scores for cardiovascular risk prediction. *European Heart Journal* 2025. https://doi.org/10.1093/eurheartj/ehaf947
 
 *(Add your thesis citation/reference here once finalised.)*
 
-## License
-
-*(Add a license here, e.g. MIT for the code — note that this only applies to the analysis code, not to any UK Biobank data, which remains subject to UK Biobank's own data-access terms.)*
 
 ## Author / Contact
 
-- **Author:** *(your name)*
-- **Institution:** *(your university / department)*
-- **Supervisor:** *(advisor name, if you'd like to credit them)*
-- **Contact:** *(email or GitHub handle)*
+- **Author:** *Che-An Chou*
+- **Institution:** *King's College London*
+
 
 ## Acknowledgements
 
